@@ -1,10 +1,9 @@
 {
-  "extends": ["eslint:recommended", "airbnb", "prettier"],
+  "extends": ["eslint:recommended", "prettier"],
   "plugins": ["react-hooks"],
   "env": {
     "browser": true,
   },
-  "parser": "babel-eslint",
   "rules": {
     "no-unused-vars": "warn",
     "no-plusplus": [0],
