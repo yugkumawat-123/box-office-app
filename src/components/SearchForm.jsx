@@ -3,6 +3,7 @@ import { useState } from 'react';
 const SearchForm = ({ onSearch }) => {
   const [seacrhStr, setSeacrhStr] = useState('');
   const [searchOption, setSearchOption] = useState('shows');
+
   const onSearchInputChange = ev => {
     setSeacrhStr(ev.target.value);
   };
