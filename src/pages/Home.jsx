@@ -6,7 +6,7 @@ import ShowGrid from '../components/shows/ShowGrid';
 import ActorsGrid from '../components/actors/ActorsGrid';
 
 const Home = () => {
-  const [filter, setFilter] = useState('null');
+  const [filter, setFilter] = useState(null);
 
   const { data: apiData, error: apiDataError } = useQuery({
     queryKey: ['search', filter],
@@ -14,12 +14,16 @@ const Home = () => {
       filter.searchOption === 'shows'
         ? searchForShow(filter.q)
         : searchForPeople(filter.q),
-    enabled: !!filter,
+    enabled: !!filter && !!filter.q,
     refetchOnWindowFocus: false,
   });
 
-  const onSearch = async ({ q, searchOption }) => {
-    setFilter({ q, searchOption });
+  const onSearch = ({ q, searchOption }) => {
+    if (q.trim() !== '') {
+      setFilter({ q, searchOption });
+    } else {
+      setFilter(null);
+    }
   };
 
   const renderApiData = () => {
