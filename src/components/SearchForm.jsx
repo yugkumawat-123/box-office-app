@@ -1,7 +1,8 @@
 import { useState } from 'react';
+import { useSearchStr } from '../lib/useSearchStr.js';
 
 const SearchForm = ({ onSearch }) => {
-  const [seacrhStr, setSeacrhStr] = useState('');
+  const [seacrhStr, setSeacrhStr] = useSearchStr('');
   const [searchOption, setSearchOption] = useState('shows');
 
   const onSearchInputChange = ev => {
