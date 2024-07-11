@@ -3,6 +3,7 @@
   "plugins": ["react-hooks"],
   "env": {
     "browser": true,
+    "es6": true,
   },
   "rules": {
     "no-unused-vars": "warn",
