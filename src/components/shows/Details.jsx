@@ -1,3 +1,4 @@
+import styled from 'styled-components';
 const Details = props => {
   const { status, premiered, network } = props;
   return (
@@ -11,3 +12,9 @@ const Details = props => {
 };
 
 export default Details;
+
+const DetailsWrapper = styled.div`
+  p {
+    margin: 5px 0;
+  }
+`;
